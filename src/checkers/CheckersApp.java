@@ -28,10 +28,10 @@ public class CheckersApp {
     public static SidePanel sidePanel = new SidePanel();
 
     // image sources
-    public static String whitePiece = "./images/whitePiece.png";
-    public static String blackPiece = "./images/blackPiece.png";
-    public static String whiteKing = "./images/whiteKing.png";
-    public static String blackKing = "./images/blackKing.png";
+    public static String whitePiece = "images/whitePiece.png";
+    public static String blackPiece = "images/blackPiece.png";
+    public static String whiteKing = "images/whiteKing.png";
+    public static String blackKing = "images/blackKing.png";
 
     /**
      * CheckersApp constructor used to launch the app
