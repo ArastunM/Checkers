@@ -15,7 +15,7 @@ The project utilizes in-built Java package [Swing](https://en.wikipedia.org/wiki
 the GUI, hence no additional installations are required
 
 ## Getting Started
-The Checkers game can be run by downloading, unzipping [Checkers.zip](Checkers.zip) and running the Checkers.jar
+The Checkers game can be played by downloading, unzipping [Checkers.zip](Checkers.zip) and running the Checkers.jar
 
 ## Details
 - Author - Arastun Mammadli
