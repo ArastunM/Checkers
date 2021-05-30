@@ -4,7 +4,7 @@ Checkers app developed using Java.
 Checkers provides 3 game modes, *2 player*, *player vs bot* 
 and *2 bot* that can be played under different checkerboard layouts.
 The game also provides game downloads and uploads using 
-[PDN](PDN Specification.pdf).
+[PDN](PDN_Specification.pdf).
 
 ## Prerequisites
 [Java version 15.0.1](https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html) 
