@@ -12,7 +12,7 @@ was used for development
 
 ## Installation
 The project utilizes in-built Java package [Swing](https://en.wikipedia.org/wiki/Swing_(Java)) for 
-the GUI, hence no additional installations are required
+the GUI; hence, no additional installations are required
 
 ## Getting Started
 The Checkers game can be played by downloading, unzipping [Checkers.zip](Checkers.zip) and running the Checkers.jar
