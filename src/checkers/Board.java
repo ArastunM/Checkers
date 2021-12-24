@@ -50,7 +50,7 @@ public class Board implements ActionListener {
      * @param y width, y coordinate of the tile on Board
      */
     private static void paintTile(int x, int y) {
-        if ((x + y) % 2 == 0)
+        if ((x + y) % 2 == 1)
             tiles[x][y].setBackground(CheckersApp.TILE_TYPE[1]);
         else
             tiles[x][y].setBackground(CheckersApp.TILE_TYPE[0]);
