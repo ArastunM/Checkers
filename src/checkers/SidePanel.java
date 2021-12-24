@@ -86,7 +86,7 @@ public class SidePanel implements ActionListener {
      * Sets up the settings JComponent[]
      */
     private void setUpSettings() {
-        String[] gameModeOptionList = new String[] {"2 PLAYER MODE", "PLAYER VS BOT", "2 BOT MODE"};
+        String[] gameModeOptionList = new String[] {"2 PLAYER MODE", "PLAYER VS BOT", "2 BOT MODE", "PLAYER VS CENG"};
         gameModeOptions = new JComboBox<>(gameModeOptionList); setUpOptions(gameModeOptions);
 
         String[] tileColorOptionList = new String[] {"BLACK", "GREEN", "WOOD"};
@@ -142,6 +142,7 @@ public class SidePanel implements ActionListener {
             switch (gameModeOptions.getSelectedIndex()) { // game mode options
                 case 0, 1 -> CheckersApp.GAME_MODE = selectedGameMode;
                 case 2 -> { CheckersApp.GAME_MODE = selectedGameMode; RandomBot.run(); }
+                case 3 -> CheckersApp.GAME_MODE = selectedGameMode;
             }
             switch (boardColorOptions.getSelectedIndex()) { // board color options
                 case 0 -> CheckersApp.TILE_TYPE = GameDesign.defaultTile;
