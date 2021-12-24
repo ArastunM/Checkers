@@ -32,13 +32,8 @@ public class Piece implements ActionListener {
      * @param color color of the Piece
      */
     public Piece(int x, int y, boolean color, boolean isKing) {
-        // assigning image based on color
-        String image = color ? (isKing ? CheckersApp.whiteKing : CheckersApp.whitePiece)
-                : (isKing ? CheckersApp.blackKing : CheckersApp.blackPiece);
-
         // setting up a button for the Piece
         self = new JButton();
-        self.setIcon(new ImageIcon(image));
         self.setAlignmentX(Component.CENTER_ALIGNMENT);
         self.setOpaque(false);
         self.setContentAreaFilled(false);
@@ -51,6 +46,7 @@ public class Piece implements ActionListener {
         this.color = color; // assigning color
         this.isKing = isKing; // assigning piece type
 
+        refitIcon(); // refitting image icon
         Board.pieces.add(this); // adding Piece to Board
     }
 
@@ -91,9 +87,29 @@ public class Piece implements ActionListener {
      * Kings the Piece
      */
     public void king() {
-        String image = color ? CheckersApp.whiteKing : CheckersApp.blackKing;
-        self.setIcon(new ImageIcon(image));
         isKing = true;
+        refitIcon();
+    }
+
+    /**
+     * refits the Piece image icon to updated frame dimensions
+     */
+    public void refitIcon() {
+        String imagePath = color ? (isKing ? CheckersApp.whiteKing : CheckersApp.whitePiece)
+                : (isKing ? CheckersApp.blackKing : CheckersApp.blackPiece);
+        Image image = new ImageIcon(getClass().getResource(imagePath)).getImage();
+
+        if (!(self.getWidth() == 0 && self.getHeight() == 0) || CheckersApp.OLD_PIECE_WIDTH != 0) {
+            int pieceSize = self.getWidth() == 0 ? CheckersApp.OLD_PIECE_WIDTH : self.getWidth();
+            image = image.getScaledInstance(pieceSize, pieceSize, Image.SCALE_SMOOTH);
+        } self.setIcon(new ImageIcon(image));
+    }
+
+    /**
+     * refits all Piece image icons
+     */
+    public static void refitAllIcons() {
+        for (Piece piece : Board.pieces) { piece.refitIcon(); }
     }
 
     /**
