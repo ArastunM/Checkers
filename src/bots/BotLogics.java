@@ -110,6 +110,8 @@ public class BotLogics {
                 public void run() {
                     if (botType.equals("RandomBot"))
                         RandomBot.newMove();
+                    else if (botType.equals("CEngine"))
+                        CEngineAccess.newMove();
                     // implement statements for other bots...
                     super.cancel();
                 }
