@@ -1,5 +1,6 @@
 package checkers;
 
+import bots.CEngineAccess;
 import bots.RandomBot;
 
 import javax.swing.*;
@@ -128,18 +129,18 @@ public class Moves {
      */
     public static void nextMove() {
         MOVE = !MOVE;
-        if (Board.activePiece != null && GameLogics.isKinged(Board.activePiece)) {
-            Board.activePiece.king();
-        }
+        if (Board.activePiece != null && GameLogics.isKinged(Board.activePiece)) Board.activePiece.king();
         CheckersApp.sidePanel.updateMoveLabels(MOVE);
         CheckersApp.pageRefresh();
 
-        if (isGameOver())
-            CheckersApp.gameOver();
+        if (isGameOver()) CheckersApp.gameOver();
         else {
             if (CheckersApp.GAME_MODE.equals("2 BOT MODE")
                     || (!Moves.MOVE && CheckersApp.GAME_MODE.equals("PLAYER VS BOT")))
                 RandomBot.run();
+            else if (!Moves.MOVE && CheckersApp.GAME_MODE.equals("PLAYER VS CENG")) {
+                CEngineAccess.run();
+            }
         }
     }
 }
