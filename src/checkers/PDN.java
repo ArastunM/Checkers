@@ -104,7 +104,7 @@ public class PDN {
      * @return fixed width, y coordinate of the Piece on Board
      */
     private static int fixY(int x, int y) {
-        return x % 2 == 0 ? structureEven[y] : structureOdd[y];
+        return x % 2 == 1 ? structureEven[y] : structureOdd[y];
     }
 
     // getStructureEven and getStructureOdd generate the Board structure arrays based on BOARD_SIZE
